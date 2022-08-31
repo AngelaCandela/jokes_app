@@ -60,7 +60,7 @@ const getRandomJoke = () => {
 
 const restart = () => {
   setup.innerText = "";
-  punchline.innerText = "";
+  punchline.remove();
   getRandomJoke();
   hideNextButton();
 };
