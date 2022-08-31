@@ -3,6 +3,7 @@ const startButton = document.querySelector("button");
 const revealButton = document.getElementById("reveal-button");
 const nextButton = document.getElementById("next-button");
 const punchline = document.createElement('p');
+punchline.setAttribute('id', 'punchline');
 
 const showRevealButton = () => {
   revealButton.classList.remove('hidden');
