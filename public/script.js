@@ -35,6 +35,8 @@ const displaySetup = (data) => {
 
 const displayPunchline = (data) => {
   punchline.innerText = data.punchline;
+  jokeContainer.appendChild(punchline);
+
   showNextButton();
   hideRevealButton();
 };
