@@ -1,3 +1,4 @@
+const root = document.documentElement;
 const setup = document.getElementById("setup");
 const startButton = document.querySelector("button");
 const revealButton = document.getElementById("reveal-button");
@@ -34,6 +35,7 @@ const displaySetup = (data) => {
 };
 
 const displayPunchline = (data) => {
+  root.style.setProperty('--typewriter-characters', data.punchline.length); 
   punchline.innerText = data.punchline;
   jokeContainer.appendChild(punchline);
 
