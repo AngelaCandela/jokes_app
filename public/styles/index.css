@@ -38,6 +38,9 @@ h3 {
   font-size: 1.3rem;
 }
 
+p {
+  font-family: 'Source Code Pro', monospace;
+}
 .hidden {
   display: none;
 }
