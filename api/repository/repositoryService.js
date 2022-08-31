@@ -21,8 +21,23 @@ const findRandom = (tableName) =>
     });
   });
 
+const findOneById = (tableName, id) =>
+  new Promise((resolve, reject) => {
+    const sql = connection.format('SELECT * FROM ?? WHERE id = ?', [tableName, id]);
+
+    connection.query(sql, (error, result) => {
+      if (error) throw error;
+      if (result.length > 0) {
+        resolve(result[0]);
+      } else {
+        reject(`Couldn't find any jokes with id: ${id}`);
+      }
+    });
+  });
+
 
 module.exports = {
   findAll,
-  findRandom
+  findRandom,
+  findOneById
 };
