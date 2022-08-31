@@ -121,11 +121,15 @@ button:active {
 
 #punchline::before {
   background: var(--bg-color);
+  animation: typewriter var(--typewriter-speed) steps(var(--typewriter-characters)) 1s forwards;
 }
 
 #punchline::after {
   width: 0.125em;
   background: black;
+  animation:
+    typewriter var(--typewriter-speed) steps(var(--typewriter-characters)) 1s forwards,
+    blink 750ms steps(24) infinite;
 }
 
 @keyframes typewriter {
