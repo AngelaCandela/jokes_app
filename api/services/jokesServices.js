@@ -14,7 +14,15 @@ const getRandomJoke = () => {
   return result;
 };
 
+const getJokeById = (id) => {
+  const result = repository.findOneById('joke', id)
+    .then((joke) => joke)
+    .catch((error) => console.log(`Error: ${error}`));
+  return result;
+};
+
 module.exports = {
   getAllJokes,
-  getRandomJoke
+  getRandomJoke,
+  getJokeById
 };
