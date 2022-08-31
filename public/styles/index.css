@@ -5,6 +5,7 @@
 }
 
 html {
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: calc(60% + 0.8vmin);
   box-sizing: border-box;
 }
