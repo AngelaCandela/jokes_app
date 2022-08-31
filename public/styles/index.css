@@ -104,3 +104,27 @@ button:active {
   place-self: center;
 }
 
+#punchline {
+  position: relative;
+  width: max-content;
+}
+
+#punchline::before,
+#punchline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#punchline::before {
+  background: var(--bg-color);
+}
+
+#punchline::after {
+  width: 0.125em;
+  background: black;
+}
+
