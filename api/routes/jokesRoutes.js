@@ -20,4 +20,12 @@ router.get('/random', async (req, res) => {
   res.send(result);
 });
 
+// Get a joke by id
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  const result = await jokesService.getJokeById(id);
+  if (result) res.send(result)
+  else res.status(404).send(`Couldn't find any jokes with id: ${id}`)
+});
+
 module.exports = router;
