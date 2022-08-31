@@ -64,4 +64,18 @@ router.put('/update/:id', (req, res) => {
 });
 
 // Delete a joke
+router.delete('/delete/:id', (req, res) => {
+  const { id } = req.params;
+  const sql = `DELETE FROM joke WHERE id = ${id}`;
+
+  connection.query(sql, (error, result) => {
+    if (error) throw error;
+    if (result.affectedRows === 0) {
+      res.status(404).send(`Couldn't find any jokes with id: ${id}`);
+    } else {
+      res.send('Joke deleted successfully!');
+    }
+  });
+});
+
 module.exports = router;
