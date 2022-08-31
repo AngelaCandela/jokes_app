@@ -46,4 +46,22 @@ router.post('/add', (req, res) => {
   
 });
 
+// Update a joke
+router.put('/update/:id', (req, res) => {
+  const { id } = req.params;
+  const { type, setup, punchline } = req.body;
+  const sql = `UPDATE joke SET type = '${type}', setup = '${setup}', punchline = '${punchline}' WHERE id = ${id}`;
+
+  connection.query(sql, (error, result) => {
+    console.log(result)
+    if (error) throw error;
+    if (result.affectedRows === 0) {
+      res.status(404).send(`Couldn't find any jokes with id: ${id}`);
+    } else {
+      res.send('Joke updated successfully!');
+    }
+  });
+});
+
+// Delete a joke
 module.exports = router;
