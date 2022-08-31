@@ -2,6 +2,7 @@ const setup = document.getElementById("setup");
 const startButton = document.querySelector("button");
 const revealButton = document.getElementById("reveal-button");
 const nextButton = document.getElementById("next-button");
+const jokeContainer = document.getElementById("joke-container");
 const punchline = document.createElement('p');
 punchline.setAttribute('id', 'punchline');
 
