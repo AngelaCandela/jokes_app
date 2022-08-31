@@ -7,6 +7,14 @@ const getAllJokes = () => {
   return results;
 };
 
+const getRandomJoke = () => {
+  const result = repository.findRandom('joke')
+    .then((joke) => joke)
+    .catch((error) => error);
+  return result;
+};
+
 module.exports = {
-  getAllJokes
+  getAllJokes,
+  getRandomJoke
 };
