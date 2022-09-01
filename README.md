@@ -2,23 +2,21 @@
 
 ## Requirements
 
-* Node 8
+* Node 14
 * Git
 
 ## Setup
 
-Create a new folder on your local machine, clone the repo and install the dependencies.
-
-```bash
-mkdir my-folder
-cd my-folder
-```
+Clone the repo on your local machine.
 
 ```bash
 git clone https://github.com/AngelaCandela/jokes_app.git
 ```
 
+Move inside the `jokes_app` folder and install the dependencies.
+
 ```bash
+cd jokes_app/
 npm install
 ```
 Use your preferred database management tool to create a new database (I've used MySQL Workbench). Then, in order to get the `joke` table, import the SQL dump file you can find inside the `db/` folder into the database you've just created.
